@@ -6,12 +6,12 @@ LR=2e-4
 MAX_STEPS=8000
 SAVE_STEPS=8000
 MASTER_PORT=$(shuf -n 1 -i 10000-65535)
-model_name_or_path="resources/chatglm-6b"   # LLM底座模型路径，或者是huggingface hub上的模型名称
-your_data_path="datasets"  # 填入数据集所在的文件夹路径
-your_checkpopint_path="saved/moelora"  # 填入用来存储模型的路径
+model_name_or_path="resources/chatglm-6b"   
+your_data_path="datasets"  
+your_checkpopint_path="saved/moelora"  
 MAX_SOURCE_LENGTH=1024
 
-peft_path=""  # 如果之前训练过，且存储了peft权重，则设置为peft权重的文件夹路径
+peft_path=""  
 
 # # Training Command
 deepspeed --num_gpus=4 --master_port $MASTER_PORT run_mlora.py \

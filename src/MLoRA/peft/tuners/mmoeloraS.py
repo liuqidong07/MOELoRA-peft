@@ -1,12 +1,4 @@
 # -*- encoding: utf-8 -*-
-'''
-@File    :   mmoeloraS.py
-@Time    :   2023/08/11 17:40:21
-@Author  :   Liu Qidong
-@Version :   1.0
-@Contact :   dong_liuqi@163.com
-'''
-
 # here put the import lib
 import re
 import importlib

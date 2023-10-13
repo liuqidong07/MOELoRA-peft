@@ -1,12 +1,4 @@
 # -*- encoding: utf-8 -*-
-'''
-@File    :   chatglm.py
-@Time    :   2023/08/09 17:47:31
-@Author  :   Liu Qidong
-@Version :   1.0
-@Contact :   dong_liuqi@163.com
-'''
-
 # here put the import lib
 import json
 
