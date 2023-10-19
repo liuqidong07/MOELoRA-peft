@@ -1,6 +1,7 @@
-# When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications
+# MOELoRA: An MOE-based Parameter Efficient
 
-This is the implementation of the paper "When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications".
+Fine-Tuning Method for Multi-task Medical
+ApplicationsThis is the implementation of the paper "MOELoRA: An MOE-based Parameter Efficient Fine-Tuning Method for Multi-task Medical Applications".
 
 You can implement our model according to the following steps:
 
