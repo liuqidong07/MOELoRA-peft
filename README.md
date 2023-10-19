@@ -1,4 +1,4 @@
-# MOELoRA: An MOE-based Parameter Efficient
+# MOELoRA: An MOE-based Parameter EfficientFine-Tuning Method for Multi-task Medical Applications
 
 Fine-Tuning Method for Multi-task Medical
 ApplicationsThis is the implementation of the paper "MOELoRA: An MOE-based Parameter Efficient Fine-Tuning Method for Multi-task Medical Applications".
