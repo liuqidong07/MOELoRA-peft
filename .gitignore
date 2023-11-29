@@ -5,7 +5,8 @@ datasets/demo/*
 datasets/MPEFT/*
 !/datasets/MPEFT/*.py
 !/datasets/MPEFT/*.ipynb
-resources/
+resources/*
+!resources/*.py
 saved/
 __pycache__/
 *.out
