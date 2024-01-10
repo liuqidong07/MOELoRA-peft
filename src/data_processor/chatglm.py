@@ -30,15 +30,8 @@ class chatglm1_train(object):
 
         if self.task:
             model_inputs["task_id"] = []
-            task_dict = json.load(open("datasets/pre_data/task_dataset.json", "r"))
+            task_dict = json.load(open("datasets/task_dataset.json", "r"))
             task_dict = task_dict["str2id"]
-        if self.department:
-            model_inputs["depart"], model_inputs["entity"] = [], []
-            depart_dict_ = json.load(open("datasets/MPEFT/department_major.json", "r"))
-            depart_dict = depart_dict_["str2id_simple"]
-            convert_dict = depart_dict_["depart_dict"]
-            entity_dict = json.load(open("datasets/MPEFT/entity.json", "r"))
-            entity_dict = entity_dict["str2id"]
 
 
         for i in range(len(examples[self.prompt_column])):
@@ -86,24 +79,6 @@ class chatglm1_train(object):
                 if self.task:
                     task_id = task_dict[examples['task_dataset'][i]]
                     model_inputs["task_id"].append(task_id)
-                if self.department:
-                    depart_list = examples["department"][i].split("|")
-                    new_depart_list = []
-                    for meta_depart in depart_list:
-                        if meta_depart not in convert_dict.keys():  # not in the covert dict
-                            new_depart_list.append(depart_dict["其他"])
-                        else:
-                            new_depart_list.append(depart_dict[convert_dict[meta_depart]])
-                    #depart_list = [task_dict[convert_dict[meta_depart]] for meta_depart in depart_list]
-                    major_depart = max(new_depart_list, key=depart_list.count)
-                    model_inputs["depart"].append(major_depart)
-
-                    entity_list = [entity_dict[meta_depart["ner_type"]] for meta_depart in examples["entity"][i]]
-                    if len(entity_list) == 0:   # no entity in entity list, give a padding
-                        entity_list.append(entity_dict[""])
-                    while len(entity_list) < 20:    # the longest entity list is 20
-                        entity_list.append(0)
-                    model_inputs["entity"].append(entity_list)
 
         return model_inputs
 
@@ -134,15 +109,8 @@ class chatglm1_eval(object):
 
         if self.task:
             task_id = []
-            task_dict = json.load(open("datasets/pre_data/task_dataset.json", "r"))
+            task_dict = json.load(open("datasets/task_dataset.json", "r"))
             task_dict = task_dict["str2id"]
-        if self.department:
-            depart, entity = [], []
-            depart_dict_ = json.load(open("datasets/MPEFT/department_major.json", "r"))
-            depart_dict = depart_dict_["str2id_simple"]
-            convert_dict = depart_dict_["depart_dict"]
-            entity_dict = json.load(open("datasets/MPEFT/entity.json", "r"))
-            entity_dict = entity_dict["str2id"]
 
         for i in range(len(examples[self.prompt_column])):
             if not examples[self.response_column][i]:
@@ -164,24 +132,6 @@ class chatglm1_eval(object):
 
             if self.task:
                 task_id.append(task_dict[examples['task_dataset'][i]])
-            if self.department:
-                    depart_list = examples["department"][i].split("|")
-                    new_depart_list = []
-                    for meta_depart in depart_list:
-                        if meta_depart not in convert_dict.keys():  # not in the covert dict
-                            new_depart_list.append(depart_dict["其他"])
-                        else:
-                            new_depart_list.append(depart_dict[convert_dict[meta_depart]])
-                    #depart_list = [task_dict[convert_dict[meta_depart]] for meta_depart in depart_list]
-                    major_depart = max(new_depart_list, key=depart_list.count)
-                    depart.append(major_depart)
-
-                    entity_list = [entity_dict[meta_depart["ner_type"]] for meta_depart in examples["entity"][i]]
-                    if len(entity_list) == 0:   # no entity in entity list, give a padding
-                        entity_list.append(entity_dict[""])
-                    while len(entity_list) < 20:    # the longest entity list is 20
-                        entity_list.append(0)
-                    entity.append(entity_list)
 
         inputs = [self.prefix + inp for inp in inputs]
         model_inputs = self.tokenizer(inputs,
@@ -198,9 +148,6 @@ class chatglm1_eval(object):
 
         if self.task:
             model_inputs["task_id"] = task_id
-        if self.department:
-            model_inputs["depart"] = depart
-            model_inputs["entity"] = entity
 
         return model_inputs
         
