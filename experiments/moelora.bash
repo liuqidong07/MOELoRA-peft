@@ -7,7 +7,7 @@ MAX_STEPS=8000
 SAVE_STEPS=8000
 MASTER_PORT=$(shuf -n 1 -i 10000-65535)
 model_name_or_path="resources/chatglm-6b"   
-your_data_path="datasets"  
+your_data_path="data"  
 your_checkpopint_path="saved/moelora"  
 MAX_SOURCE_LENGTH=1024
 
