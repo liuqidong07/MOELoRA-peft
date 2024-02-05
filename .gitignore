@@ -17,6 +17,7 @@ m_log/
 results/*
 !/results/*.py
 !/results/*.
+!/results/*.ipynb
 datasets/cblue/*
 !/datasets/cblue/*.py
 !/datasets/cblue/*.ipynb
