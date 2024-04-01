@@ -1,6 +1,6 @@
-# MOELoRA: An MOE-based Parameter Efficient Fine-Tuning Method for Multi-task Medical Applications
+# When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications
 
-This is the implementation of the paper "MOELoRA: An MOE-based Parameter Efficient Fine-Tuning Method for Multi-task Medical Applications".
+This is the implementation of the SIGIR'24 paper "When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications".
 
 ## Running
 
@@ -18,7 +18,6 @@ You can implement our model according to the following steps:
    ```
 5. Finally, you can run and configure the `results/evaluate.ipynb` to get the evaluation scores
 
-
 ## Requirements
 
 To ease the configuration of the environment, I list versions of my hardware and software equipments:
@@ -34,7 +33,6 @@ To ease the configuration of the environment, I list versions of my hardware and
   - transformers: 4.28.1
   - deepspeed: 0.9.4
 
-
 ## Citation
 
 If the code and the paper are useful for you, it is appreciable to cite our paper:
@@ -47,7 +45,6 @@ If the code and the paper are useful for you, it is appreciable to cite our pape
   year={2023}
 }
 ```
-
 
 ## Thanks
 
