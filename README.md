@@ -1,6 +1,8 @@
 # When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications
 
-This is the implementation of the SIGIR'24 paper "When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications".
+This is the implementation of the SIGIR'24 paper "When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications". 
+
+__If any quetions, you can firstly refer to the issues in [initial repo](https://github.com/liuqidong07/MOELoRA-peft).__
 
 ## Running
 
