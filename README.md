@@ -1,6 +1,6 @@
 # When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications
 
-This is the implementation of the SIGIR'24 paper "When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications". 
+This is the implementation of the SIGIR'24 paper "When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications".
 
 __If any quetions, you can firstly refer to the issues in [initial repo](https://github.com/liuqidong07/MOELoRA-peft).__
 
@@ -34,6 +34,8 @@ To ease the configuration of the environment, I list versions of my hardware and
   - Pytorch: 1.12.0+cu102
   - transformers: 4.28.1
   - deepspeed: 0.9.4
+
+You can also try the `environment.yml` to install the environment.
 
 ## Citation
 
