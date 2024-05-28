@@ -44,7 +44,6 @@ from src.MLoRA.peft import PeftModel, TaskType, get_peft_model
 from src.MLoRA.peft import LoraConfig, AdaLoraConfig
 from src.MLoRA.peft import MMOELoraConfigS
 from src.data_processor.chatglm import chatglm1_train, chatglm1_eval
-from src.data_processor.chatglm2 import chatglm2_train, chatglm2_eval
 from src.data_processor.collator import LongestSequenceCollator
 
 logger = logging.getLogger(__name__)
@@ -216,13 +215,6 @@ def main(parser):
         preprocess_function_eval = chatglm1_eval(data_args, model_args, prompt_column,
                                                  response_column, history_column, prefix,
                                                  tokenizer, task_flag, depart_flag)
-    elif model_args.model_name_or_path.split("/")[-1] == "chatglmv2":
-        preprocess_function_train = chatglm2_train(data_args, model_args, prompt_column,
-                                                   response_column, history_column, prefix,
-                                                   tokenizer, task_flag, model_args.department)
-        preprocess_function_eval = chatglm2_eval(data_args, model_args, prompt_column,
-                                                 response_column, history_column, prefix,
-                                                 tokenizer, task_flag, model_args.department)
     else:
         raise ValueError("No such Foundation Model")
 
