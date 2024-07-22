@@ -42,11 +42,12 @@ You can also try the `environment.yml` to install the environment.
 If the code and the paper are useful for you, it is appreciable to cite our paper:
 
 ```
-@article{liu2023moelora,
-  title={Moelora: An moe-based parameter efficient fine-tuning method for multi-task medical applications},
+@inproceedings{liu2024moe,
+  title={When MOE Meets LLMs: Parameter Efficient Fine-tuning for Multi-task Medical Applications},
   author={Liu, Qidong and Wu, Xian and Zhao, Xiangyu and Zhu, Yuanshao and Xu, Derong and Tian, Feng and Zheng, Yefeng},
-  journal={arXiv preprint arXiv:2310.18339},
-  year={2023}
+  booktitle={Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages={1104--1114},
+  year={2024}
 }
 ```
 

@@ -29,7 +29,7 @@ deepspeed --num_gpus=4 --master_port $MASTER_PORT run_mlora.py \
     --max_target_length 196 \
     --per_device_train_batch_size 4 \
     --per_device_eval_batch_size 4 \
-    --gradient_accumulation_steps 8 \
+    --gradient_accumulation_steps 4 \
     --max_steps ${MAX_STEPS} \
     --logging_steps 100 \
     --save_steps ${SAVE_STEPS} \
